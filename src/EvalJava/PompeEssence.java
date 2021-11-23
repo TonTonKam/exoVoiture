@@ -9,12 +9,11 @@ public class PompeEssence {
 	public PompeEssence() {
 		super();
 		contenu = typeCarburant;
-		contenanceEssence = 50;
-		contenanceDiesel = 50;
+
 		if(contenu == "essence") {
-			contenanceEssence = 50;
+			this.contenanceEssence = 50;
 		}else{
-			contenanceDiesel = 50;
+			this.contenanceDiesel = 50;
 		}
 	}
 
