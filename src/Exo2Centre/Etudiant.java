@@ -5,6 +5,7 @@ public class Etudiant {
 	//attributs
 	private String nom, prenom;
 	private Filiere filiere;
+	private EFiliere eFiliere;
 	
 	//constructor
 	public Etudiant(String prenom, String nom, Filiere filiere) {
@@ -14,6 +15,17 @@ public class Etudiant {
 		this.filiere = filiere;
 	}
 	
+	
+	public Etudiant(String nom, String prenom, EFiliere eFiliere) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.eFiliere = eFiliere;
+	}
+
+	//fonctions
+	
+
 	//getter
 	public String getNom() {
 		return nom;

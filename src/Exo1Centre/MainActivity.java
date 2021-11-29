@@ -32,16 +32,31 @@ public class MainActivity {
 		
 		for(int i = 0; i < listSpec.size(); i++) {
 			//initialisation de la variable dans la boucle pour qu'a chaque passage elle se mette a false
-			boolean valeurNull = false;
+			boolean isValeurNull = false;
 			for (int j = 0; j < listProf.size(); j++) {
 				if(listSpec.get(i).getSpecialite() == listProf.get(j).getSpecialiteObject().getSpecialite()) {
 					System.out.println(listProf.get(j));
-					valeurNull = true;
+					isValeurNull = true;
 				}
 			}
 			//si a la fin de la boucle de la listProf le false ne change pas, alors il n'y a aucun prof dans la listSpec
-			if(valeurNull == false) {
+			if(isValeurNull == false) {
 				System.out.println("Aucun enseignant pour la spécialité : "+ listSpec.get(i).getSpecialite());
+			}
+		}
+		
+		//correction
+		for (Specialite spec : listSpec) {
+			boolean isEmpty = true;
+			System.out.println("\n**Correction " +spec);
+			for (Enseignant enseignant : listProf) {
+				if(enseignant.getSpecialiteObject().getSpecialite().equalsIgnoreCase(spec.getSpecialite())) {
+					System.out.println("\t**Correction " +enseignant);
+					isEmpty = false;
+				}
+			}
+			if(isEmpty) {
+				System.out.println("\t**Correction Il y a aucun enseignant dans cette specialite "+ spec.getSpecialite());
 			}
 		}
 	}
